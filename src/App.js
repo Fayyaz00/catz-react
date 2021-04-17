@@ -1,16 +1,6 @@
 import React, { useState } from 'react'
 import Note from './components/Note'
 
-setTimeout(() => {
-  console.log('loop..')
-  let i = 0
-  while (i < 5000) {
-    i++
-  }
-  console.log('end')
-}, 5000)
-
-
 const App = (props) => {
   const [notes, setNotes] = useState(props.notes);
   const [newNote, setNewNote] = useState('');
