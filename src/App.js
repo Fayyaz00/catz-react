@@ -1,25 +1,19 @@
 import React, { useState } from 'react'
+import Note from './components/Note'
 
-const Button = (props) => (
-  <button onClick={props.handleClick}>
-    {props.text}
-  </button>
-)
+const App = (props) => {
 
-const App = () => {
-  const [value, setValue] = useState(10)
-
-  const setToValue = (newValue) => {
-    setValue(newValue)
-  }
+  const { notes } = props;
 
   return (
     <div>
-      {value}
-      <Button handleClick={() => setToValue(1000)} text="thousand" />
-      <Button handleClick={() => setToValue(0)} text="reset" />
-      <Button handleClick={() => setToValue(value + 1)} text="increment" />
-
+      <h1>Notes</h1>
+      <ul>
+        {notes.map((note) => {
+          return <Note key={note.id} note={note} />
+        }
+        )}
+      </ul>
     </div>
   )
 }
