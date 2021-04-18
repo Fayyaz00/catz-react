@@ -6,7 +6,7 @@ const Note = ({ note, toggleImportance }) => {
 
   return (
     <div>
-      <li>
+      <li className='note'>
         <div>
           {note.content}
         </div>
